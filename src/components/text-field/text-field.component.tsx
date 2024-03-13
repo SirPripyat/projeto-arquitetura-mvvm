@@ -13,7 +13,7 @@ export default function TextField({ label, placeholder }: TextFieldProps) {
   return (
     <>
       <div className="flex flex-col gap-1">
-        <label className="text-sm">{label}</label>
+        <label className="text-sm text-white">{label}</label>
         <Input placeholder={placeholder} />
       </div>
     </>
