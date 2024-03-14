@@ -1,32 +1,26 @@
-import { Button } from "@/components/button";
-import TextField from "@/components/text-field/text-field.component";
-import { ButtonHierarchy } from "@/enum/button-hierarchy.enum";
+import {Button} from "@/components/button";
+import {ButtonHierarchy} from "@/enum/button-hierarchy.enum";
 import React from "react";
+import Image from "next/image";
+import RegisterUser from "@/app/(public)/register/components/register-user-form.component";
 
 export default function Register() {
   return (
     <>
-      <img
+      <Image
         src="/background.svg"
         alt="background"
-        className="absolute left-1 w-1/4"
+        className="absolute left-1 w-1/4 opacity-30"
+        width={100}
+        height={100}
       />
-      <div className="flex flex-col gap-8 w-1/4">
-        <div className="flex  justify-center text-4xl text-white">
-          <p>Project Name</p>
-        </div>
-        <form className="flex flex-col gap-8">
-          <TextField label={"Nome Completo"} placeholder={"Nome completo"} />
 
-          <TextField label={"E-Mail"} placeholder={"E-mail"} />
+      <div className="flex flex-col justify-center gap-8 w-1/4">
+        <h1 className={"text-4xl text-gray-50 text-center"}>Project Name</h1>
 
-          <TextField label={"Senha"} placeholder={"Senha"} />
+        <RegisterUser/>
 
-          <Button.Wrapper hierarchy={ButtonHierarchy.Filled}>
-            Criar conta
-          </Button.Wrapper>
-        </form>
-        <div className="flex flex-col justify-center items-center text-white">
+        <div className="flex flex-col justify-center items-center gap-1 text-gray-50 w-full">
           <p>Já possui conta?</p>
           <Button.Wrapper hierarchy={ButtonHierarchy.Ghosted}>
             Logar

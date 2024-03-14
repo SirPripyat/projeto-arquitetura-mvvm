@@ -1,20 +1,23 @@
-import Input from "@/components/input/input.component";
+import {InputProps} from "@/interfaces/input.interface";
+import {InputsComponentsTypes} from "@/types/inputs-components-types.type";
+import useTextField from "@/components/text-field/use-text-field.hook";
 
-interface TextFieldProps {
+interface TextFieldProps extends InputProps {
   label: string;
-  placeholder: string;
+  type: InputsComponentsTypes;
 }
 
-// object = {
-//   [text]: <Input />
-// [password]: <InputPassword />
+export default function TextField({label, type, ...otherProps}: TextFieldProps) {
 
-export default function TextField({ label, placeholder }: TextFieldProps) {
+  const {findOutWhatInputToRender} = useTextField({...otherProps});
+
   return (
     <>
       <div className="flex flex-col gap-1">
-        <label className="text-sm text-white">{label}</label>
-        <Input placeholder={placeholder} />
+        <label className="text-sm text-gray-300 placeholder:text-gray-600">{label}</label>
+        {
+          findOutWhatInputToRender[type]
+        }
       </div>
     </>
   );
