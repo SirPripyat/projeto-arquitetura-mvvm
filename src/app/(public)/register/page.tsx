@@ -1,11 +1,11 @@
 'use client';
 
-import { Button } from '@/components/button';
+import { Button } from '../../../components/global/button';
 import { ButtonHierarchy } from '@/enum/button-hierarchy.enum';
 import React from 'react';
 import RegisterUserForm from '@/app/(public)/register/components/register-user-form.component';
 import { useRouter } from 'next/navigation';
-import { Logo } from '@/components/logo';
+import { Logo } from '@/components/global/logo';
 
 export default function Register() {
   const { push } = useRouter();

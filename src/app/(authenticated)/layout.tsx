@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../globals.css';
-import { MainWrapper } from '@/components/main-wrapper';
 import React from 'react';
-import Header from '@/components/header/header.component';
+import Header from '@/components/global/header/header.component';
+import { MainWrapper } from '@/components/global/main-wrapper';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <MainWrapper.Authenticated>{children}</MainWrapper.Authenticated>
+        <MainWrapper.Authenticated>
+          <Toaster position="bottom-center" />
+          {children}
+        </MainWrapper.Authenticated>
       </body>
     </html>
   );

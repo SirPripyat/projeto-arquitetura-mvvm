@@ -1,10 +1,10 @@
 'use client';
 
-import { Button } from '@/components/button';
+import { Button } from '../../../components/global/button';
 import { ButtonHierarchy } from '@/enum/button-hierarchy.enum';
 import LoginUserForm from './components/login-user-form.component';
 import { useRouter } from 'next/navigation';
-import { Logo } from '@/components/logo';
+import { Logo } from '@/components/global/logo';
 
 export default function Home() {
   const { push } = useRouter();

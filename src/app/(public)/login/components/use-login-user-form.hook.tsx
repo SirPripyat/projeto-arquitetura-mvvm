@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { IUser } from '@/interfaces/user.interface';
 import { userDefaultValue } from '@/default-values/user.default-value';
-import { RegisterUserInputsModel } from '@/interfaces/register-user-inputs-model.interface';
+import { IInputsToRender } from '@/interfaces/register-user-inputs-model.interface';
 
 export default function useLoginUserForm() {
   const [userModel, setUserModel] = useState<IUser>(userDefaultValue);
@@ -17,13 +17,14 @@ export default function useLoginUserForm() {
     }));
   };
 
-  const loginUserInputsModel: RegisterUserInputsModel[] = [
+  const loginUserInputsModel: IInputsToRender<IUser>[] = [
     {
       type: 'default',
       label: 'E-Mail',
       placeholder: 'campo@dominio.com',
       name: 'email',
       onChange: handleChangeInputsValues,
+      value: userModel.email,
     },
     {
       type: 'password',
@@ -31,6 +32,7 @@ export default function useLoginUserForm() {
       placeholder: 'Digite sua senha',
       name: 'password',
       onChange: handleChangeInputsValues,
+      value: userModel.password,
     },
   ];
 

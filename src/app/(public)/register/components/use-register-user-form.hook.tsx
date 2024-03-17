@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { IUser } from '@/interfaces/user.interface';
 import { userDefaultValue } from '@/default-values/user.default-value';
-import { RegisterUserInputsModel } from '@/interfaces/register-user-inputs-model.interface';
+import { IInputsToRender } from '@/interfaces/register-user-inputs-model.interface';
 import { useRouter } from 'next/navigation';
 
 export default function useRegisterUserForm() {
@@ -18,13 +18,14 @@ export default function useRegisterUserForm() {
     }));
   };
 
-  const registerUserInputsModel: RegisterUserInputsModel[] = [
+  const registerUserInputsModel: IInputsToRender<IUser>[] = [
     {
       type: 'default',
       label: 'Nome Completo',
       placeholder: 'Nome completo',
       name: 'name',
       onChange: handleChangeInputsValues,
+      value: userModel.name,
     },
     {
       type: 'default',
@@ -32,6 +33,7 @@ export default function useRegisterUserForm() {
       placeholder: 'campo@dominio.com',
       name: 'email',
       onChange: handleChangeInputsValues,
+      value: userModel.email,
     },
     {
       type: 'password',
@@ -39,6 +41,7 @@ export default function useRegisterUserForm() {
       placeholder: 'Digite sua senha',
       name: 'password',
       onChange: handleChangeInputsValues,
+      value: userModel.password,
     },
   ];
 

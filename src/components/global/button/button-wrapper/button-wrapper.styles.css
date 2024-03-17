@@ -1,0 +1,25 @@
+button {
+  background-color: transparent;
+
+  border-radius: 8px;
+
+  padding: 8px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+
+  width: auto;
+  height: auto;
+
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}

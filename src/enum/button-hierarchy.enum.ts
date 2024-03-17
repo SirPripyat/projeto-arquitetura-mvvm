@@ -1,5 +1,5 @@
 export enum ButtonHierarchy {
   Filled,
   Outlined,
-  Ghosted
+  Ghosted,
 }
