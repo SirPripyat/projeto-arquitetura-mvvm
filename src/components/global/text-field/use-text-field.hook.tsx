@@ -8,6 +8,7 @@ export default function useTextField({ ...otherProps }: useTextFieldProps) {
   const findOutWhatInputToRender = {
     default: <Input {...otherProps} />,
     password: <PasswordInput {...otherProps} />,
+    number: <Input type={'number'} {...otherProps} />,
   };
 
   return {

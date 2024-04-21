@@ -39,7 +39,7 @@ export default function useHandleProductTextFieldsModel() {
       value: productModel.size,
     },
     {
-      type: 'default',
+      type: 'number',
       label: 'Quantidade',
       placeholder: 'Quantidade do produto',
       name: 'quantity',

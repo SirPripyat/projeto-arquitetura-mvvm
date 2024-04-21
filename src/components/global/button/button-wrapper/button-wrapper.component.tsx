@@ -7,11 +7,13 @@ interface ButtonWrapperProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   hierarchy: ButtonHierarchy;
   type: 'submit' | 'button' | 'reset';
+  disabled?: boolean;
 }
 
 export default function ButtonWrapper({
   children,
   hierarchy,
+  disabled,
   ...otherButtonProps
 }: ButtonWrapperProps) {
   const { findOutWhatHierarchyToSet } = useButtonWrapper();
@@ -19,7 +21,11 @@ export default function ButtonWrapper({
   const getButtonStyles = findOutWhatHierarchyToSet[hierarchy];
 
   return (
-    <button className={getButtonStyles} {...otherButtonProps}>
+    <button
+      disabled={disabled}
+      className={getButtonStyles}
+      {...otherButtonProps}
+    >
       {children}
     </button>
   );

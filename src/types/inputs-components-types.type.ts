@@ -1,1 +1,1 @@
-export type InputsComponentsTypes = 'default' | 'password';
+export type InputsComponentsTypes = 'default' | 'password' | 'number';
